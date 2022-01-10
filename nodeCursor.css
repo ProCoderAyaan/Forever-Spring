@@ -1,0 +1,193 @@
+bootstrap.min.css
+Who has access
+S
+
+System properties
+Type
+Style Sheet
+Size
+157 KB
+Storage used
+157 KBOwned by Geosyss
+Location
+css
+Owner
+Sandeep Perqindia
+Modified
+Jan 8, 2022 by Sandeep Perqindia
+Opened
+5:46 PM by me
+Created
+Jan 8, 2022
+Add a description
+Viewers can download
+/* ----------------------------
+
+  cursor styles
+
+--------------------------- */
+
+.cursor {
+    /*pointer-events: none;*/
+    position: absolute;
+    z-index: 999;
+    top : 0;
+    left : 0;
+    display: block;
+
+    /*styles applied for showing / hiding cursor - do not touch*/
+    -webkit-transition: opacity 300ms linear;
+    -o-transition: opacity 300ms linear;
+    transition: opacity 300ms linear;
+    opacity: 0;
+
+    /*element width*/
+    width: 6px;
+    height: 6px;
+    overflow: hidden;
+    display: none;
+}
+
+.cursor.moving {
+    opacity: 1;
+}
+
+.cursor::before {
+    content: ' ';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #ee3636;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+
+    /* transitions animations*/
+    opacity: 1;
+    -webkit-transition: opacity 300ms linear;
+    -o-transition: opacity 300ms linear;
+    transition: opacity 300ms linear;
+}
+
+/* expand is the class you assigned with the plugin to cursor when a selected element is hovered*/
+.cursor.expand::before {
+    opacity: 0;
+   
+
+}
+
+
+/* ----------------------------
+
+  node styles
+
+--------------------------- */
+
+.node {
+    pointer-events: none;
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: block;
+
+    /*styles applied for showing / hiding cursor - do not touch*/
+    -webkit-transition: opacity 300ms linear;
+    -o-transition: opacity 300ms linear;
+    transition: opacity 300ms linear;
+    opacity: 0;
+    
+    /*element width*/
+    width: 24px;
+    height: 24px;
+}
+
+.node.moving {
+      opacity: 1;
+}
+
+.node::before {
+    content: ' ';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: transparent;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    border: 1px solid #ee3636;
+    /*states and transitions animations*/
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
+    opacity: 1;
+    -webkit-transition: opacity 300ms linear, transform 300ms linear, border 300ms linear, background-color 300ms linear;
+    -o-transition: opacity 300ms linear, transform 300ms linear, border 300ms linear, background-color 300ms linear;
+    -webkit-transition: opacity 300ms linear, border 300ms linear, background-color 300ms linear, -webkit-transform 300ms linear;
+    transition: opacity 300ms linear, border 300ms linear, background-color 300ms linear, -webkit-transform 300ms linear;
+    transition: opacity 300ms linear, transform 300ms linear, border 300ms linear, background-color 300ms linear;
+    transition: opacity 300ms linear, transform 300ms linear, border 300ms linear, background-color 300ms linear, -webkit-transform 300ms linear;
+
+}
+
+/* expand is the class you assigned with the plugin to cursor when a selected element is hovered*/
+.node.expand::before {
+    -webkit-transform: scale(2);
+        -ms-transform: scale(2);
+            transform: scale(2);
+    background-color: #ee3636;
+    opacity: 0.2;
+}
+/* drag cursor */
+.node.drag-cursor::before {
+    -webkit-transform: scale(2);
+        -ms-transform: scale(2);
+            transform: scale(2);
+    background-color: transparent;
+    border: 1px solid #ee3636;
+    opacity: 1;
+}
+
+.node.drag-cursor::after {
+    position: absolute;
+    left: -38px;
+    content: url(../../arrow-cursor.html);
+    opacity: 1;
+}
+.node.zoom-cursor::before {
+    -webkit-transform: scale(3);
+        -ms-transform: scale(3);
+            transform: scale(3);
+    background-color: transparent;
+    border: 1px solid #ee3636;
+    opacity: .8;
+}
+.node.zoom-cursor::after {
+    position: absolute;
+    left: -9px;
+    top: -2px;
+    content: "view";
+    font-size: 18px;
+    font-weight: 500;
+    opacity: .8;
+    color: #ee3636;
+}
+/* zoom cursor-2 */
+.node.zoom-cursor-2::before {
+    -webkit-transform: scale(3);
+        -ms-transform: scale(3);
+            transform: scale(3);
+    background-color: transparent;
+    border: 1px solid #ee3636;
+    opacity: .8;
+}
+.node.zoom-cursor-2::after {
+    position: absolute;
+    left: -12px;
+    top: -2px;
+    content: "zoom";
+    font-size: 18px;
+    font-weight: 500;
+    opacity: .8;
+    color: #ee3636;
+}
